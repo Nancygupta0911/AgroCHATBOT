@@ -1,0 +1,90 @@
+<script>
+    const chatBox = document.getElementById("chat-box");
+    const userInput = document.getElementById("user-input");
+    const sendBtn = document.getElementById("send-btn");
+
+    // Helper to append a message bubble
+    function appendMessage(text, sender) {
+        const msg = document.createElement("div");
+        msg.classList.add(sender === "user" ? "user-msg" : "bot-msg");
+        msg.textContent = text;
+        chatBox.appendChild(msg);
+        chatBox.scrollTop = chatBox.scrollHeight;
+        return msg;
+    }
+
+    // Show typing bubble (temporary)
+    function showTyping() {
+        const typing = document.createElement("div");
+        typing.classList.add("typing");
+        typing.id = "typing-placeholder";
+        chatBox.appendChild(typing);
+        chatBox.scrollTop = chatBox.scrollHeight;
+        return typing;
+    }
+
+    function removeTyping() {
+        const t = document.getElementById("typing-placeholder");
+        if (t) t.remove();
+    }
+
+    async function sendMessage() {
+        const text = userInput.value.trim();
+        if (!text) return;
+
+        // Append user message immediately
+        appendMessage(text, "user");
+        userInput.value = "";
+
+        // Show typing placeholder
+        showTyping();
+
+        try {
+            const res = await fetch("/get", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: text })
+            });
+
+            // try to parse JSON safely
+            const data = await res.json().catch(() => ({}));
+            removeTyping();
+
+            const botText = (data && data.response) ? data.response : "Sorry, no response from server.";
+
+            // Render bot reply letter-by-letter for a typing effect
+            const bubble = document.createElement("div");
+            bubble.classList.add("bot-msg");
+            chatBox.appendChild(bubble);
+
+            let i = 0;
+            const speed = 20;
+            (function type() {
+                if (i <= botText.length) {
+                    bubble.textContent = botText.slice(0, i);
+                    i++;
+                    chatBox.scrollTop = chatBox.scrollHeight;
+                    setTimeout(type, speed);
+                }
+            })();
+
+        } catch (err) {
+            removeTyping();
+            appendMessage("Error contacting server. Check console.", "bot");
+            console.error("Chat error:", err);
+        }
+    }
+
+    sendBtn.addEventListener("click", sendMessage);
+    userInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") sendMessage();
+    });
+</script>
+
+
+
+
+
+
+
+
