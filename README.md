@@ -48,12 +48,13 @@ Assistant** is a web-based AI assistant designed to provide agricultural guidanc
 ![Login Page](blob:https://web.whatsapp.com/1d281a84-acf8-4665-9c0b-c5fcf7aa5ade)  
 
 **Registration Page**  
-![Registration Page](blob:https://web.whatsapp.com/0fe12f00-1480-4d71-af41-3273411019ac)  
+[Register](![WhatsApp Image 2025-10-08 at 7 16 43 PM](https://github.com/user-attachments/assets/c3457ed5-1724-4c6d-941e-56f87031c28c)
+)
+)  
 
 **Chat Interface**  
 ![Chat Interface](blob:https://web.whatsapp.com/575209e3-baff-4342-95c4-5c9b69c006d7)  
 
-> *(Replace `screenshots/...` with your actual screenshot paths in the repo)*
 
 ---
 
