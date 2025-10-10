@@ -49,7 +49,8 @@ Assistant** is a web-based AI assistant designed to provide agricultural guidanc
 )
 
 **Registration Page**  
-[Register]![WhatsApp Image 2025-10-08 at 7 16 43 PM](https://github.com/user-attachments/assets/c3457ed5-1724-4c6d-941e-56f87031c28c)
+(<img width="1830" height="922" alt="Screenshot 2025-10-11 010710" src="https://github.com/user-attachments/assets/edc526bd-8ed0-42e0-9d0b-b3c7ecea6ac2" />
+)
 
   
 
