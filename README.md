@@ -55,7 +55,8 @@ Assistant** is a web-based AI assistant designed to provide agricultural guidanc
   
 
 **Chat Interface**  
-[Chat ]![WhatsApp Image 2025-10-08 at 7 20 25 PM](https://github.com/user-attachments/assets/73c6730e-56d8-4a71-bf40-cae1c6a90deb)
+<img width="1805" height="922" alt="image" src="https://github.com/user-attachments/assets/ba0063c7-40e9-4c0b-9fa4-8207efb04c4f" />
+
 
 
 ---
